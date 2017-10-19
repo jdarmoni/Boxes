@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Page Title</title>
+	<link rel="stylesheet" type="text/css" href="something.css">
+
+</head>
+
+<body>
+   
+        <div id= "container2">
+            <div id="holder">    
+                <div id ="wii">
+                    <p>PLAYER 1</p>
+                </div>
+                
+                <div id ="bank">
+                    <p></p>
+                </div>
+                <div id="lottery">
+                    <p></p>
+                </div>
+            </div>
+            
+            <div id="holder2">    
+                <div id ="wii2">
+                    <p>PLEEPER 2</p>
+                </div>
+                
+                <div id ="bank2">
+                    <p></p>
+                </div>
+                <div id="lottery2">
+                    <p></p>
+                </div>
+            </div>
+            
+                <div id="leftButtons">
+                    <button>press</button>
+                    <button id = "freePoint" onclick="zwick()">click</button>
+                </div>
+                <div id="rightButtons">
+                   <button onclick="moof2()" id="presser">press</button>
+                   <button id = "freePoint2" onclick="zwick2()">click</button>
+                </div>
+        </div>
+            
+
+<script>
+    var flute =document.getElementById("wii");
+    var clarinet = document.getElementById("bank");
+    var tuba = document.getElementById("lottery");
+    var bank =1;
+    var numbr =1;
+    var lotto =1;
+	var penalty =0;
+    
+        function goof(e) {
+            if(e.keyCode==65) {
+                if (numbr==1) {
+                    flute.innerHTML="poppy!" + numbr;
+                    flute.style.color="red";
+                    numbr =2;
+						if (penalty==1) {
+							debter();
+							penalty =0;
+						} 
+                    rando();
+                    
+                } else if (numbr ==2) {
+                        flute.innerHTML="doopy" + numbr;
+                        flute.style.color="blue";
+                        numbr =3;
+							if (penalty==1) {
+							debter();
+							penalty =0;
+						} 
+                        rando();
+                } else {
+                    flute.innerHTML="gloopy" +numbr;
+                    flute.style.color="green";
+                    numbr =1;
+                    bank ++;
+                    banker();
+						if (penalty==1) {
+							debter();
+							penalty =0;
+						} 
+                    rando();
+                    
+                }
+            } if(e.keyCode==76) {
+                if (lotto<3){
+                    bank ++;
+                    banker();
+                    lotto=5;
+                    document.getElementById("freePoint").style.backgroundColor="black";
+                }
+            }
+        }
+        function banker() {
+            clarinet.innerHTML=bank;
+        }
+        
+       
+        
+        function rando() {
+            var rando = Math.floor(Math.random() * 6) + 1;
+            lotto=rando;
+            tuba.innerHTML=rando;
+                if (rando<3) {
+                    document.getElementById("freePoint").style.backgroundColor="green";
+					penalty=1;
+                } else {
+                    document.getElementById("freePoint").style.backgroundColor="black";
+                }
+        
+        }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    var flute2 =document.getElementById("wii2");
+    var clarinet2 = document.getElementById("bank2");
+    var tuba2 = document.getElementById("lottery2");
+    var bank2 =1;
+    var numbr2 =1;
+    var lotto2 =1;
+	var penalty2 =0; //unused right now!
+    
+        function moof2() {
+            if (numbr2==1) {
+                flute2.innerHTML="poppy!" + numbr2;
+                flute2.style.color="red";
+                numbr2 =2;
+					if (penalty2==1) {
+						debter();
+						document.getElementById("presser").style.backgroundColor="red";
+						penalty2 =0;
+					} 
+                rando2();
+            } else if (numbr2 ==2) {
+                    flute2.innerHTML="doopy" + numbr2;
+                    flute2.style.color="blue";
+                    numbr2 =3;
+						if (penalty2==1) {
+						debter();
+						document.getElementById("presser").style.backgroundcolor="red";
+						penalty2 =0;
+					} 
+                    rando2();
+            } else {
+                flute2.innerHTML="gloopy" +numbr2;
+                flute2.style.color="green";
+                numbr2 =1;
+                bank2 ++;
+                banker2();
+					if (penalty2==1) {
+						debter();
+						document.getElementById("presser").style.backgroundcolor="red";
+						penalty2 =0;
+					} 
+                rando2();
+            }
+    }  
+        function banker2() {
+            clarinet2.innerHTML=bank2;
+        }
+		function debter() {
+			clarinet2.innerHTML=bank2 -2;
+		}
+        
+        function zwick2() {
+            if (lotto2<3){
+            bank2 ++;
+            banker2();
+            lotto2=5;
+            document.getElementById("freePoint2").style.backgroundColor="black";
+            }
+        }
+        function rando2() {
+            var rando2 = Math.floor(Math.random() * 6) + 1;
+            lotto2=rando2;
+            tuba2.innerHTML=rando2;
+                if (rando2<3) {
+                    document.getElementById("freePoint2").style.backgroundColor="green";
+					penalty2 =1;
+					
+                } else {
+                    document.getElementById("freePoint2").style.backgroundColor="black";
+                }
+        
+        }
+
+   
+    document.onkeydown =goof;
+
+  
+</script>
+
+</body>
+</html>
