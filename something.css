@@ -1,0 +1,83 @@
+
+#container2 {
+    width: 700px;
+    height: 250px;
+    position: relative;
+    border: solid;
+}
+#holder {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    border: solid;
+}
+#holder2 {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    border: solid;
+    right:0;
+}
+
+#wii {
+    width: 100px;
+    height: 200px;
+    border: 1px solid;
+    position: absolute;
+    left: 0%;
+}
+
+#bank {
+    width: 100px;
+    height: 200px;
+    border: 1px solid;
+    position: absolute;
+    right: 0%;
+    background-color: yellow;
+}
+
+#lottery {
+    width: 100px;
+    height: 200px;
+    border: 1px solid;
+    position: absolute;
+    left: 33%;
+    background-color: blue;
+}
+
+#wii2 {
+    width: 100px;
+    height: 200px;
+    border: 1px solid;
+    position: absolute;
+    left: 0%;
+}
+
+#bank2 {
+    width: 100px;
+    height: 200px;
+    border: 1px solid;
+    position: absolute;
+    right: 0%;
+    background-color: yellow;
+}
+
+#lottery2 {
+    width: 100px;
+    height: 200px;
+    border: 1px solid;
+    position: absolute;
+    left: 33%;
+    background-color: blue;
+}
+
+#leftButtons {
+    position: absolute;
+    top: 90%;
+}
+
+#rightButtons {
+    position: absolute;
+    top: 90%;
+    right: 0%;
+}

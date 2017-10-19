@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Page Title</title>
+        <style>
+    #container {
+        height: 200px;
+        width: 600px;
+        outline: 1px solid black;
+        position: relative;
+    }
+    
+    #guy {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        outline: 1px solid black;
+        background-image: url("julien.JPG");
+        background-size: cover;
+      
+    }
+    
+    #mec {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        outline: 1px solid black;
+        background-image: url("rafaclay.jpg");
+        background-size: cover;
+        right: 0;
+    }
+        </style>
+</head>
+
+<body>
+
+<div id="container">
+    <div id="guy">
+    </div>
+    
+    <div id ="mec">  
+    </div>
+</div>
+
+<script>
+    var guy = document.getElementById("guy");
+    var mec = document.getElementById("mec");
+    var container= document.getElementById("container");
+    
+    var guyLeft = 0;
+    var guyRight =0;
+    
+    function anim(e){
+        if(e.keyCode==39) {
+            guyLeft +=4;
+            guy.style.left = guyLeft + 'px';
+            if(guyLeft >=550) {
+                guyLeft -=4;
+                alert("oh?");
+            }
+        }
+        
+        if(e.keyCode==37){
+            guyLeft -=4;
+            guy.style.left = guyLeft + 'px';
+            if(guyLeft <=0) {
+                guyLeft +=4;
+                alert("oh?");
+            }
+        }
+        
+        if(e.keyCode==38){
+            guyLeft -=4;
+            guy.style.top = guyLeft + 'px';
+           
+        }
+        
+        if(e.keyCode==40){
+            guyLeft +=4;
+            guy.style.top = guyLeft + 'px';
+            
+        }
+    
+        if(e.keyCode==65) {
+            guyRight +=4;
+            mec.style.right = guyRight + 'px';
+            if(guyRight >=550) {
+                guyRight -=4;
+                alert("oh?");
+            }
+        }
+        
+        if(e.keyCode==68) {
+            guyRight -=4;
+            mec.style.right = guyRight + 'px';
+            if(guyRight <=0) {
+                guyRight +=4;
+                alert("oh?");
+            }
+        }
+    }
+    
+    document.onkeydown =anim;
+</script>
+
+</body>
+</html>
